@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26124.0
+MinimumVisualStudioVersion = 15.0.26124.0
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{4F97D6A7-7000-48F0-AAD1-3D5061F82A2C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "W4k.SumoLogic.Logging.Serilog", "src\W4k.SumoLogic.Logging.Serilog\W4k.SumoLogic.Logging.Serilog.csproj", "{DFF96FA4-4CB2-4F73-A8B6-3DFF44C0A1C8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "solution", "solution", "{7F7C147B-8989-4782-8EF8-6BE7DB5514E8}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		README.md = README.md
+		stylecop.json = stylecop.json
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DFF96FA4-4CB2-4F73-A8B6-3DFF44C0A1C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFF96FA4-4CB2-4F73-A8B6-3DFF44C0A1C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFF96FA4-4CB2-4F73-A8B6-3DFF44C0A1C8}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{DFF96FA4-4CB2-4F73-A8B6-3DFF44C0A1C8}.Debug|x64.Build.0 = Debug|Any CPU
+		{DFF96FA4-4CB2-4F73-A8B6-3DFF44C0A1C8}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{DFF96FA4-4CB2-4F73-A8B6-3DFF44C0A1C8}.Debug|x86.Build.0 = Debug|Any CPU
+		{DFF96FA4-4CB2-4F73-A8B6-3DFF44C0A1C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFF96FA4-4CB2-4F73-A8B6-3DFF44C0A1C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DFF96FA4-4CB2-4F73-A8B6-3DFF44C0A1C8}.Release|x64.ActiveCfg = Release|Any CPU
+		{DFF96FA4-4CB2-4F73-A8B6-3DFF44C0A1C8}.Release|x64.Build.0 = Release|Any CPU
+		{DFF96FA4-4CB2-4F73-A8B6-3DFF44C0A1C8}.Release|x86.ActiveCfg = Release|Any CPU
+		{DFF96FA4-4CB2-4F73-A8B6-3DFF44C0A1C8}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DFF96FA4-4CB2-4F73-A8B6-3DFF44C0A1C8} = {4F97D6A7-7000-48F0-AAD1-3D5061F82A2C}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1F1F8F66-B18B-47D7-9028-5CA00EC3F9A6}
+	EndGlobalSection
+EndGlobal

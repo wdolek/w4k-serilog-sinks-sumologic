@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <IncludeSymbols>true</IncludeSymbols>
+    <NoWarn>$(NoWarn),1573,1591,1712</NoWarn>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+
+<PropertyGroup>
+    <Authors>Zdenek Havlin</Authors>
+    <Description>
+      Serilog SumoLogic sink.
+    </Description>
+    <PackageTags>serilog;sumologic</PackageTags>
+    <RepositoryUrl>https://dev.azure.com/w4k/W4k.SumoLogic.Logging.Serilog</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="2.6.1" PrivateAssets="All" />
+    <PackageReference Include="Serilog" Version="2.7.1" />
+    <PackageReference Include="StyleCop.Analyzers" Version="1.1.0-beta009" PrivateAssets="All" />
+    <PackageReference Include="SumoLogic.Logging.Common" Version="1.0.0.7" />    
+  </ItemGroup>
+
+  <PropertyGroup>
+    <CodeAnalysisRuleSet>$(SolutionDir)\ca.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+
+</Project>
