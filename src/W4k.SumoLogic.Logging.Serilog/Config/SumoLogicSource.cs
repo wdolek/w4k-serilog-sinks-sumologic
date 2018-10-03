@@ -3,7 +3,7 @@
     /// <summary>
     /// SumoLogic event source describer.
     /// </summary>
-    public sealed class SumoLogicSource
+    public class SumoLogicSource
     {
         /// <summary>
         /// Gets or sets the name used for messages sent to SumoLogic server (sent as X-Sumo-Name header).

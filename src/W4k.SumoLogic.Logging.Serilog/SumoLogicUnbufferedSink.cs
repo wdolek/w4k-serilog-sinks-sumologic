@@ -12,7 +12,7 @@ using W4k.SumoLogic.Logging.Serilog.Factories;
 namespace W4k.SumoLogic.Logging.Serilog
 {
     /// <summary>
-    /// SumoLogic Serilog event sink.
+    /// SumoLogic Serilog sink (without buffering).
     /// </summary>
     public sealed class SumoLogicUnbufferedSink : ILogEventSink, IDisposable
     {
@@ -80,7 +80,7 @@ namespace W4k.SumoLogic.Logging.Serilog
             }
 
             _messageSender.TrySend(
-                _formatter.FormatEvent(logEvent),
+                _formatter.Format(logEvent),
                 _source.SourceName,
                 _source.SourceCategory,
                 _source.SourceHost);

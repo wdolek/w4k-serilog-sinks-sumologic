@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Net.Http;
 using System.Threading;
-using Serilog;
 using Serilog.Core;
 using Serilog.Events;
 using Serilog.Formatting;
@@ -14,6 +13,9 @@ using W4k.SumoLogic.Logging.Serilog.Factories;
 
 namespace W4k.SumoLogic.Logging.Serilog
 {
+    /// <summary>
+    /// Buffered SumoLogic Serilog sink.
+    /// </summary>
     public sealed class SumoLogicSink : ILogEventSink, IDisposable
     {
         /// <summary>
@@ -101,7 +103,7 @@ namespace W4k.SumoLogic.Logging.Serilog
                 return;
             }
 
-            _messageQueue.Add(_formatter.FormatEvent(logEvent));
+            _messageQueue.Add(_formatter.Format(logEvent));
         }
 
         /// <inheritdoc/>

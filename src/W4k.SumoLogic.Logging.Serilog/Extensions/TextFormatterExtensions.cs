@@ -8,15 +8,7 @@ namespace W4k.SumoLogic.Logging.Serilog.Extensions
 {
     internal static class TextFormatterExtensions
     {
-        /// <summary>
-        /// Formats provided log event.
-        /// </summary>
-        /// <param name="formatter">Text formatter.</param>
-        /// <param name="logEvent">Log event to format.</param>
-        /// <returns>
-        /// Log even string value.
-        /// </returns>
-        public static string FormatEvent(this ITextFormatter formatter, LogEvent logEvent)
+        public static string Format(this ITextFormatter formatter, LogEvent logEvent)
         {
             var bodyBuilder = new StringBuilder();
             using (var textWriter = new StringWriter(bodyBuilder, CultureInfo.InvariantCulture))
