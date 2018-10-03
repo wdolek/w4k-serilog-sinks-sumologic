@@ -51,11 +51,6 @@ namespace W4k.SumoLogic.Logging.Serilog
             SumoLogicSource source,
             ITextFormatter formatter)
         {
-            if (httpMessageHandler is null)
-            {
-                throw new ArgumentNullException(nameof(httpMessageHandler));
-            }
-
             if (connection is null)
             {
                 throw new ArgumentNullException(nameof(connection));

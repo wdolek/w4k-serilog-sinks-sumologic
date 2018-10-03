@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Net.Http;
 using System.Threading;
+using Serilog;
 using Serilog.Core;
 using Serilog.Events;
 using Serilog.Formatting;
@@ -55,11 +56,6 @@ namespace W4k.SumoLogic.Logging.Serilog
             SumoLogicSource source,
             ITextFormatter formatter)
         {
-            if (httpMessageHandler is null)
-            {
-                throw new ArgumentNullException(nameof(httpMessageHandler));
-            }
-
             if (connection is null)
             {
                 throw new ArgumentNullException(nameof(connection));
