@@ -2,7 +2,7 @@
 
 Serilog sink for logging events into SumoLogic.
 
-Code is inspired by Bill Prat's `Serilog.Sinks.SumoLogic` ([serilog-sinks-sumologic](https://github.com/billpratt/serilog-sinks-sumologic))
+Code is inspired by Bill Pratt's `Serilog.Sinks.SumoLogic` ([serilog-sinks-sumologic](https://github.com/billpratt/serilog-sinks-sumologic))
 and SumoLogic own appenders for log4net and NLog ([sumologic-net-appenders](https://github.com/SumoLogic/sumologic-net-appenders)).
 
 ## Installation
@@ -24,7 +24,7 @@ There are two Serilog sinks included in this package:
 To set up logger using configuration file, additional dependency is required - install `Serilog.Settings.Configuration` as well.
 
 ```
-PM> Install-Package Serilog.Settings.Configuration
+Install-Package Serilog.Settings.Configuration
 ```
 
 Add `appsettings.json` (or whatever configuration you need) as follows:

@@ -12,13 +12,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "solution", "solution", "{7F
 		.editorconfig = .editorconfig
 		.gitattributes = .gitattributes
 		.gitignore = .gitignore
+		LICENSE = LICENSE
 		README.md = README.md
 		stylecop.json = stylecop.json
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sample", "sample", "{B642C1E0-F4ED-4A0E-A6A7-DC5EFB1C3065}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "W4k.Serilog.Sinks.SumoLogic.Sample", "sample\W4k.Serilog.Sinks.SumoLogic.Sample\W4k.Serilog.Sinks.SumoLogic.Sample.csproj", "{2A06166F-E708-4E8A-94C0-76AC5169DB9B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "W4k.Serilog.Sinks.SumoLogic.Sample", "sample\W4k.Serilog.Sinks.SumoLogic.Sample\W4k.Serilog.Sinks.SumoLogic.Sample.csproj", "{2A06166F-E708-4E8A-94C0-76AC5169DB9B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
