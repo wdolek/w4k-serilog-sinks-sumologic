@@ -7,9 +7,9 @@ using Serilog.Core;
 using Serilog.Events;
 using Serilog.Formatting;
 using Serilog.Formatting.Display;
-using W4k.SumoLogic.Logging.Serilog.Config;
+using W4k.Serilog.Sinks.SumoLogic.Config;
 
-namespace W4k.SumoLogic.Logging.Serilog.Extensions
+namespace W4k.Serilog.Sinks.SumoLogic.Extensions
 {
     /// <summary>
     /// Extension methods of <see cref="LoggerConfiguration"/>.

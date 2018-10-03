@@ -4,7 +4,7 @@ using System.Text;
 using Serilog.Events;
 using Serilog.Formatting;
 
-namespace W4k.SumoLogic.Logging.Serilog.Extensions
+namespace W4k.Serilog.Sinks.SumoLogic.Extensions
 {
     internal static class TextFormatterExtensions
     {

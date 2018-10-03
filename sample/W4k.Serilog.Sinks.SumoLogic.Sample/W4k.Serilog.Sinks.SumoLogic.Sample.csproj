@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\W4k.SumoLogic.Logging.Serilog\W4k.SumoLogic.Logging.Serilog.csproj" />
+    <ProjectReference Include="..\..\src\W4k.Serilog.Sinks.SumoLogic\W4k.Serilog.Sinks.SumoLogic.csproj" />
   </ItemGroup>
 
   <ItemGroup>

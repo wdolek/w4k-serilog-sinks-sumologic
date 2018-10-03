@@ -1,9 +1,9 @@
 ﻿using System.Net.Http;
 using SumoLogic.Logging.Common.Log;
 using SumoLogic.Logging.Common.Sender;
-using W4k.SumoLogic.Logging.Serilog.Config;
+using W4k.Serilog.Sinks.SumoLogic.Config;
 
-namespace W4k.SumoLogic.Logging.Serilog.Factories
+namespace W4k.Serilog.Sinks.SumoLogic.Factories
 {
     internal static class MessageSenderFactory
     {

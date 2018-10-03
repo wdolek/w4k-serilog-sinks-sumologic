@@ -2,9 +2,9 @@
 using Microsoft.Extensions.Configuration;
 using Serilog;
 using Serilog.Core;
-using W4k.SumoLogic.Logging.Serilog.Extensions;
+using W4k.Serilog.Sinks.SumoLogic.Extensions;
 
-namespace W4k.SumoLogic.Logging.Serilog.Sample
+namespace W4k.Serilog.Sinks.SumoLogic.Sample
 {
     public class Program
     {

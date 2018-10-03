@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Linq.Expressions;
 using System.Reflection;
-using W4k.SumoLogic.Logging.Serilog.Config;
+using W4k.Serilog.Sinks.SumoLogic.Config;
 
-namespace W4k.SumoLogic.Logging.Serilog.Extensions
+namespace W4k.Serilog.Sinks.SumoLogic.Extensions
 {
     internal static class SumoLogicConnectionExtensions
     {

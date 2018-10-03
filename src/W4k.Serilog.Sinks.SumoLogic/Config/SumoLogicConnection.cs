@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace W4k.SumoLogic.Logging.Serilog.Config
+namespace W4k.Serilog.Sinks.SumoLogic.Config
 {
     /// <summary>
     /// SumoLogic connection properties.
