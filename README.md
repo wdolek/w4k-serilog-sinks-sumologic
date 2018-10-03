@@ -1,20 +1,104 @@
 # Introduction 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
 
-# Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
-1.	Installation process
-2.	Software dependencies
-3.	Latest releases
-4.	API references
+Serilog sink for logging events into SumoLogic.
 
-# Build and Test
-TODO: Describe and show how to build your code and run the tests. 
+Code is inspired by Bill Prat's `Serilog.Sinks.SumoLogic` ([serilog-sinks-sumologic](https://github.com/billpratt/serilog-sinks-sumologic))
+and SumoLogic own appenders for log4net and NLog ([sumologic-net-appenders](https://github.com/SumoLogic/sumologic-net-appenders)).
 
-# Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
+## Installation
 
-If you want to learn more about creating good readme files then refer the following [guidelines](https://www.visualstudio.com/en-us/docs/git/create-a-readme). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
+```ps
+Install-Package Serilog
+Install-Package W4k.Serilog.Sinks.SumoLogic
+```
+
+## Basic usage
+
+There are two Serilog sinks included in this package:
+
+- `SumoLogicSink`: Uses buffer to collect events, which are being sent in batches (extension method: `SumoLogic`)
+- `SumoLogicUnbufferedSink`: Sends event right away (extension method: `SumoLogicUnbuffered`)
+
+### Config file
+
+To set up logger using configuration file, additional dependency is required - install `Serilog.Settings.Configuration` as well.
+
+```
+PM> Install-Package Serilog.Settings.Configuration
+```
+
+Add `appsettings.json` (or whatever configuration you need) as follows:
+
+```json
+{
+  "Serilog": {
+    "WriteTo": [
+      {
+        "Name": "SumoLogic",
+        "Args": {
+          "endpointUrl": "https://localhost",
+          "sourceName": "w4k-serilog-sumologic"
+        }
+      }
+    ]
+  }
+}
+
+```
+
+Notice property `Name` - either use `SumoLogic` or `SumoLogicUnbuffered`. Detailed description
+of configuration properties are listed in [Configuration section](#configuration).
+
+To load such configuration, use Serilog's `ReadFrom` method like this:
+
+```csharp
+IConfigurationRoot configuration = new ConfigurationBuilder()
+    .AddJsonFile("appsettings.json")
+    .Build();
+
+Logger log = new LoggerConfiguration()
+    .ReadFrom.Configuration(configuration)
+    .CreateLogger();
+```
+
+### Extension method
+
+It is possible set up logger using extension method as well:
+
+```csharp
+// alternatively .WriteTo.SumoLogicUnbuffered(...)
+Logger log = new LoggerConfiguration()
+    .WriteTo.SumoLogic(new Uri("http://localhost"), sourceName: "w4k-serilog-sumologic")
+    .CreateLogger();
+```
+
+## Configuration
+
+Either use as sink arguments in configuration or as name arguments of extension methods.
+
+| Argument (B/*)            | Description                                                                           | Default value         |
+|---------------------------|---------------------------------------------------------------------------------------|----------------------:|
+| endpointUrl               | SumoLogic endpoint URL, __mandatory__                                                 | `null`                |
+| outputTemplate            | A message template describing the format used to write to the sink                    | `null`                |
+| sourceName                | The name used for messages sent to SumoLogic server                                   | `null`                |
+| sourceCategory            | The source category for messages sent to SumoLogic server                             | `null`                |
+| sourceHost                | The source host for messages sent to SumoLogic Server                                 | `null`                |
+| clientName                | The client name value that is included in each request (used for telemetry)           | `null`                |
+| connectionTimeout         | The connection timeout, in milliseconds                                               | 60 000                |
+| retryInterval (B)         | The send message retry interval, in milliseconds                                      | 10 000                |
+| maxFlushInterval (B)      | The maximum interval between flushes, in milliseconds                                 | 10 000                |
+| flushingAccuracy (B)      | How often the messages queue is checked for messages to send, in milliseconds         | 250                   |
+| messagesPerRequest (B)    | How many messages need to be in the queue before flushing                             | 100                   |
+| maxQueueSizeBytes (B)     | The messages queue capacity, in bytes                                                 | 1 000 000             |
+| httpMessageHandler        | Override HTTP message handler which manages requests to SumoLogic                     | `null`                |
+| textFormatter             | Controls the rendering of log events into text, for example to log JSON               | `null`                |
+| levelSwitch               | A switch allowing the pass-through minimum level to be changed at runtime             | `null`                |
+| restrictedToMinimumLevel  | The minimum level for events passed through the sink, ignored if `levelSwitch` is set | `LevelAlias.Minimum`  |
+
+_arguments marked with "(B)" are available only to buffered sink (`SumoLogicSink`)_
+
+#### Notes
+
+- provide `HttpMessageHandler httpMessageHandler` to adjust HTTP request sent SumoLogic
+- using custom `ITextFormatter textFormatter`, you can serialize events to JSON (for example) - if text formatter is provided, `outputTemplate` is ignored
+- when `LoggingLevelSwitch levelSwitch` is set, `LogEventLevel restrictedToMinimumLevel` argument is ignored
