@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -7,14 +7,13 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
 
-<PropertyGroup>
+  <PropertyGroup>
     <Authors>Zdenek Havlin</Authors>
-    <Description>
-      Serilog SumoLogic sink.
-    </Description>
+    <Description>Serilog SumoLogic sink.</Description>
     <PackageTags>serilog;sumologic</PackageTags>
-    <RepositoryUrl>https://dev.azure.com/w4k/W4k.SumoLogic.Logging.Serilog</RepositoryUrl>
+    <RepositoryUrl>https://dev.azure.com/w4k/W4k.Serilog.Sinks.SumoLogic</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
+    <PackageIconUrl>https://serilog.net/images/serilog-sink-nuget.png</PackageIconUrl>
   </PropertyGroup>
 
   <ItemGroup>
