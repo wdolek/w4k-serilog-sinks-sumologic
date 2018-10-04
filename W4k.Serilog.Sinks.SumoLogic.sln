@@ -21,6 +21,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sample", "sample", "{B642C1
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "W4k.Serilog.Sinks.SumoLogic.Sample", "sample\W4k.Serilog.Sinks.SumoLogic.Sample\W4k.Serilog.Sinks.SumoLogic.Sample.csproj", "{2A06166F-E708-4E8A-94C0-76AC5169DB9B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{757398C2-118D-4977-A864-2279E1742D8F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "W4k.Serilog.Sinks.SumoLogic.UnitTests", "test\W4k.Serilog.Sinks.SumoLogic.UnitTests\W4k.Serilog.Sinks.SumoLogic.UnitTests.csproj", "{368B5517-5E77-4CC9-9B2E-2CC375A23D3E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +59,18 @@ Global
 		{2A06166F-E708-4E8A-94C0-76AC5169DB9B}.Release|x64.Build.0 = Release|Any CPU
 		{2A06166F-E708-4E8A-94C0-76AC5169DB9B}.Release|x86.ActiveCfg = Release|Any CPU
 		{2A06166F-E708-4E8A-94C0-76AC5169DB9B}.Release|x86.Build.0 = Release|Any CPU
+		{368B5517-5E77-4CC9-9B2E-2CC375A23D3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{368B5517-5E77-4CC9-9B2E-2CC375A23D3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{368B5517-5E77-4CC9-9B2E-2CC375A23D3E}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{368B5517-5E77-4CC9-9B2E-2CC375A23D3E}.Debug|x64.Build.0 = Debug|Any CPU
+		{368B5517-5E77-4CC9-9B2E-2CC375A23D3E}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{368B5517-5E77-4CC9-9B2E-2CC375A23D3E}.Debug|x86.Build.0 = Debug|Any CPU
+		{368B5517-5E77-4CC9-9B2E-2CC375A23D3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{368B5517-5E77-4CC9-9B2E-2CC375A23D3E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{368B5517-5E77-4CC9-9B2E-2CC375A23D3E}.Release|x64.ActiveCfg = Release|Any CPU
+		{368B5517-5E77-4CC9-9B2E-2CC375A23D3E}.Release|x64.Build.0 = Release|Any CPU
+		{368B5517-5E77-4CC9-9B2E-2CC375A23D3E}.Release|x86.ActiveCfg = Release|Any CPU
+		{368B5517-5E77-4CC9-9B2E-2CC375A23D3E}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -62,6 +78,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{DFF96FA4-4CB2-4F73-A8B6-3DFF44C0A1C8} = {4F97D6A7-7000-48F0-AAD1-3D5061F82A2C}
 		{2A06166F-E708-4E8A-94C0-76AC5169DB9B} = {B642C1E0-F4ED-4A0E-A6A7-DC5EFB1C3065}
+		{368B5517-5E77-4CC9-9B2E-2CC375A23D3E} = {757398C2-118D-4977-A864-2279E1742D8F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1F1F8F66-B18B-47D7-9028-5CA00EC3F9A6}
