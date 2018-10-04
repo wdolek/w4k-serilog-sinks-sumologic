@@ -79,7 +79,7 @@ Either use as sink arguments in configuration or as name arguments of extension 
 | Argument (B/*)            | Description                                                                           | Default value         |
 |---------------------------|---------------------------------------------------------------------------------------|----------------------:|
 | endpointUrl               | SumoLogic endpoint URL, __mandatory__                                                 | `null`                |
-| outputTemplate            | A message template describing the format used to write to the sink                    | `null`                |
+| outputTemplate            | A message template describing the format used to write to the sink                    | _see below_           |
 | sourceName                | The name used for messages sent to SumoLogic server                                   | `null`                |
 | sourceCategory            | The source category for messages sent to SumoLogic server                             | `null`                |
 | sourceHost                | The source host for messages sent to SumoLogic Server                                 | `null`                |
@@ -99,6 +99,7 @@ _arguments marked with "(B)" are available only to buffered sink (`SumoLogicSink
 
 #### Notes
 
+- default `outputTemplate` = `"{Timestamp:yyyy-MM-dd HH:mm:ss.fff zzz} [{Level}] {Message} {Exception}"`, [see `DefaultOutputTemplate`](src/W4k.Serilog.Sinks.SumoLogic/Extensions/LoggerSinkConfigurationExtensions.cs)
 - provide `HttpMessageHandler httpMessageHandler` to adjust HTTP request sent SumoLogic
 - using custom `ITextFormatter textFormatter`, you can serialize events to JSON (for example) - if text formatter is provided, `outputTemplate` is ignored
 - when `LoggingLevelSwitch levelSwitch` is set, `LogEventLevel restrictedToMinimumLevel` argument is ignored
