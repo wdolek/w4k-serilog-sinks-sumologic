@@ -67,7 +67,7 @@ namespace W4k.Serilog.Sinks.SumoLogic.UnitTests
         {
             _logger.Information("This is a message");           
             Assert.Equal(1, _messagesHandler.ReceivedRequests.Count);
-            Assert.Equal("INFORMATION: This is a message\r\n", _messagesHandler.LastReceivedRequest.Content.ReadAsStringAsync().Result);
+            Assert.Equal($"INFORMATION: This is a message{Environment.NewLine}", _messagesHandler.LastReceivedRequest.Content.ReadAsStringAsync().Result);
         }
 
         /// <summary>
@@ -110,11 +110,11 @@ namespace W4k.Serilog.Sinks.SumoLogic.UnitTests
             _logger.Warning("This is third message");
             _logger.Error("This is fourth message");
             _logger.Fatal("This is fifh message");
-            Assert.Equal("FATAL: This is fifh message\r\n", _messagesHandler.ReceivedRequests[4].Content.ReadAsStringAsync().Result);
-            Assert.Equal("ERROR: This is fourth message\r\n", _messagesHandler.ReceivedRequests[3].Content.ReadAsStringAsync().Result);
-            Assert.Equal("WARNING: This is third message\r\n", _messagesHandler.ReceivedRequests[2].Content.ReadAsStringAsync().Result);
-            Assert.Equal("INFORMATION: This is second message\r\n", _messagesHandler.ReceivedRequests[1].Content.ReadAsStringAsync().Result);
-            Assert.Equal("DEBUG: This is first message\r\n", _messagesHandler.ReceivedRequests[0].Content.ReadAsStringAsync().Result);
+            Assert.Equal($"FATAL: This is fifh message{Environment.NewLine}", _messagesHandler.ReceivedRequests[4].Content.ReadAsStringAsync().Result);
+            Assert.Equal($"ERROR: This is fourth message{Environment.NewLine}", _messagesHandler.ReceivedRequests[3].Content.ReadAsStringAsync().Result);
+            Assert.Equal($"WARNING: This is third message{Environment.NewLine}", _messagesHandler.ReceivedRequests[2].Content.ReadAsStringAsync().Result);
+            Assert.Equal($"INFORMATION: This is second message{Environment.NewLine}", _messagesHandler.ReceivedRequests[1].Content.ReadAsStringAsync().Result);
+            Assert.Equal($"DEBUG: This is first message{Environment.NewLine}", _messagesHandler.ReceivedRequests[0].Content.ReadAsStringAsync().Result);
         }
         
         /// <summary>

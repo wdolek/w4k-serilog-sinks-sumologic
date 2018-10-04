@@ -44,7 +44,7 @@ namespace W4k.Serilog.Sinks.SumoLogic.UnitTests
             Assert.Equal(0, _messagesHandler.ReceivedRequests.Count);
             Thread.Sleep(TimeSpan.FromMilliseconds(100));
             Assert.Equal(1, _messagesHandler.ReceivedRequests.Count);
-            Assert.Equal("INFORMATION: This is a message\r\n", _messagesHandler.LastReceivedRequest.Content.ReadAsStringAsync().Result);
+            Assert.Equal($"INFORMATION: This is a message{Environment.NewLine}", _messagesHandler.LastReceivedRequest.Content.ReadAsStringAsync().Result);
         }
 
         /// <summary>
