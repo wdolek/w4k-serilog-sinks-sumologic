@@ -12,7 +12,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "solution", "solution", "{7F
 		.editorconfig = .editorconfig
 		.gitattributes = .gitattributes
 		.gitignore = .gitignore
-		azure-pipelines.yml = azure-pipelines.yml
 		LICENSE = LICENSE
 		README.md = README.md
 		stylecop.json = stylecop.json
@@ -24,7 +23,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "W4k.Serilog.Sinks.SumoLogic
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{757398C2-118D-4977-A864-2279E1742D8F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "W4k.Serilog.Sinks.SumoLogic.UnitTests", "test\W4k.Serilog.Sinks.SumoLogic.UnitTests\W4k.Serilog.Sinks.SumoLogic.UnitTests.csproj", "{368B5517-5E77-4CC9-9B2E-2CC375A23D3E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "W4k.Serilog.Sinks.SumoLogic.UnitTests", "test\W4k.Serilog.Sinks.SumoLogic.UnitTests\W4k.Serilog.Sinks.SumoLogic.UnitTests.csproj", "{368B5517-5E77-4CC9-9B2E-2CC375A23D3E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
