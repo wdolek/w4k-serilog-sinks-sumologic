@@ -91,7 +91,7 @@ Either use as sink arguments in configuration or as name arguments of extension 
 | messagesPerRequest (B)    | How many messages need to be in the queue before flushing                             | 100                   |
 | maxQueueSizeBytes (B)     | The messages queue capacity, in bytes                                                 | 1 000 000             |
 | httpMessageHandler        | Override HTTP message handler which manages requests to SumoLogic                     | `null`                |
-| textFormatter             | Controls the rendering of log events into text, for example to log JSON               | `null`                |
+| formatter                 | Controls the rendering of log events into text, for example to log JSON               | `null`                |
 | levelSwitch               | A switch allowing the pass-through minimum level to be changed at runtime             | `null`                |
 | restrictedToMinimumLevel  | The minimum level for events passed through the sink, ignored if `levelSwitch` is set | `LevelAlias.Minimum`  |
 
@@ -101,5 +101,5 @@ _arguments marked with "(B)" are available only to buffered sink (`SumoLogicSink
 
 - default `outputTemplate` = `"{Timestamp:yyyy-MM-dd HH:mm:ss.fff zzz} [{Level}] {Message} {Exception}"`, [see `DefaultOutputTemplate`](src/W4k.Serilog.Sinks.SumoLogic/Extensions/LoggerSinkConfigurationExtensions.cs)
 - provide `HttpMessageHandler httpMessageHandler` to adjust HTTP request sent SumoLogic
-- using custom `ITextFormatter textFormatter`, you can serialize events to JSON (for example) - if text formatter is provided, `outputTemplate` is ignored
 - when `LoggingLevelSwitch levelSwitch` is set, `LogEventLevel restrictedToMinimumLevel` argument is ignored
+- when setting text formatter (`ITextFormatter formatter`), always use fully qualified type name (if set, `string outputTemplate` is ignored)

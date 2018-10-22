@@ -28,7 +28,7 @@ namespace W4k.Serilog.Sinks.SumoLogic.Extensions
         /// <param name="endpointUrl">SumoLogic endpoint URL.</param>
         /// <param name="outputTemplate">
         /// A message template describing the format used to write to the sink.
-        /// Default output template is <see cref="DefaultOutputTemplate"/>, set only if <paramref name="textFormatter"/> is kept <c>null</c>.
+        /// Default output template is <see cref="DefaultOutputTemplate"/>, set only if <paramref name="formatter"/> is kept <c>null</c>.
         /// </param>
         /// <param name="sourceName">The name used for messages sent to SumoLogic server.</param>
         /// <param name="sourceCategory">The source category for messages sent to SumoLogic server.</param>
@@ -43,7 +43,7 @@ namespace W4k.Serilog.Sinks.SumoLogic.Extensions
         /// The messages queue capacity, in bytes. Messages are dropped When the queue capacity is exceeded.
         /// </param>
         /// <param name="httpMessageHandler">Override HTTP message handler which manages requests to SumoLogic.</param>
-        /// <param name="textFormatter">
+        /// <param name="formatter">
         /// Controls the rendering of log events into text, for example to log JSON.
         /// To control plain text formatting supply method with <paramref name="outputTemplate"/> and keep this <c>null</c>.
         /// </param>
@@ -67,7 +67,7 @@ namespace W4k.Serilog.Sinks.SumoLogic.Extensions
             long messagesPerRequest = 100,
             long maxQueueSizeBytes = 1_000_000,
             HttpMessageHandler httpMessageHandler = null,
-            ITextFormatter textFormatter = null,
+            ITextFormatter formatter = null,
             LoggingLevelSwitch levelSwitch = null,
             LogEventLevel restrictedToMinimumLevel = LevelAlias.Minimum)
         {
@@ -89,7 +89,7 @@ namespace W4k.Serilog.Sinks.SumoLogic.Extensions
                     messagesPerRequest,
                     maxQueueSizeBytes),
                 CreateSource(sourceName, sourceCategory, sourceHost),
-                textFormatter ?? CreateTextFormatter(outputTemplate));
+                formatter ?? CreateTextFormatter(outputTemplate));
 
             return sinkConfiguration.Sink(sink, restrictedToMinimumLevel, levelSwitch);
         }
@@ -101,7 +101,7 @@ namespace W4k.Serilog.Sinks.SumoLogic.Extensions
         /// <param name="endpointUrl">SumoLogic endpoint URL.</param>
         /// <param name="outputTemplate">
         /// A message template describing the format used to write to the sink.
-        /// Default output template is <see cref="DefaultOutputTemplate"/>, set only if <paramref name="textFormatter"/> is kept <c>null</c>.
+        /// Default output template is <see cref="DefaultOutputTemplate"/>, set only if <paramref name="formatter"/> is kept <c>null</c>.
         /// </param>
         /// <param name="sourceName">The name used for messages sent to SumoLogic server.</param>
         /// <param name="sourceCategory">The source category for messages sent to SumoLogic server.</param>
@@ -109,7 +109,7 @@ namespace W4k.Serilog.Sinks.SumoLogic.Extensions
         /// <param name="clientName">The client name value that is included in each request (used for telemetry).</param>
         /// <param name="connectionTimeout">The connection timeout, in milliseconds.</param>
         /// <param name="httpMessageHandler">Override HTTP message handler which manages requests to SumoLogic.</param>
-        /// <param name="textFormatter">
+        /// <param name="formatter">
         /// Controls the rendering of log events into text, for example to log JSON.
         /// To control plain text formatting supply method with <paramref name="outputTemplate"/> and keep this <c>null</c>.
         /// </param>
@@ -128,7 +128,7 @@ namespace W4k.Serilog.Sinks.SumoLogic.Extensions
             string clientName = null,
             long? connectionTimeout = null,
             HttpMessageHandler httpMessageHandler = null,
-            ITextFormatter textFormatter = null,
+            ITextFormatter formatter = null,
             LoggingLevelSwitch levelSwitch = null,
             LogEventLevel restrictedToMinimumLevel = LevelAlias.Minimum)
         {
@@ -145,7 +145,7 @@ namespace W4k.Serilog.Sinks.SumoLogic.Extensions
                     clientName,
                     connectionTimeout),
                 CreateSource(sourceName, sourceCategory, sourceHost),
-                textFormatter ?? CreateTextFormatter(outputTemplate));
+                formatter ?? CreateTextFormatter(outputTemplate));
 
             return sinkConfiguration.Sink(sink, restrictedToMinimumLevel, levelSwitch);
         }
