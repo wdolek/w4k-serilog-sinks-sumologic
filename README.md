@@ -72,6 +72,44 @@ Logger log = new LoggerConfiguration()
     .CreateLogger();
 ```
 
+### Setting JSON Formatter
+
+When logging to SumoLogic, you may find useful to log JSON instead of plain text message. It is possible
+to configure JSON formatter (`Serilog.Formatting.Compact.CompactJsonFormatter`) following way.
+
+First install package containing JSON formatter:
+
+```
+Install-Package Serilog.Formatting.Compact
+```
+
+Then use extension method to assign new formatter to `formatter` argument:
+
+```csharp
+new LoggerConfiguration().
+  .WriteTo.SumoLogic(new Uri("http://localhost"), formatter: new CompactJsonFormatter())
+  .CreateLogger();
+```
+
+Alternatively, you can configure formatter in config file (see [Configuration section](#Config-file)):
+
+```json
+{
+  "Serilog": {
+    "WriteTo": [
+      {
+        "Name": "SumoLogic",
+        "Args": {
+          "formatter": "Serilog.Formatting.Compact.CompactJsonFormatter, Serilog.Formatting.Compact",
+          "endpointUrl": "https://localhost",
+        }
+      }
+    ]
+  }
+}
+```
+
+
 ## Configuration
 
 Either use as sink arguments in configuration or as name arguments of extension methods.
