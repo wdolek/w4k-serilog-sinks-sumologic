@@ -25,6 +25,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{757398C2-1
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "W4k.Serilog.Sinks.SumoLogic.UnitTests", "test\W4k.Serilog.Sinks.SumoLogic.UnitTests\W4k.Serilog.Sinks.SumoLogic.UnitTests.csproj", "{368B5517-5E77-4CC9-9B2E-2CC375A23D3E}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{A19F9C70-A3F0-4690-A0C3-6A6C3BB71C13}"
+	ProjectSection(SolutionItems) = preProject
+		build\w4k-serilog-sinks-sumologic.snk = build\w4k-serilog-sinks-sumologic.snk
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
