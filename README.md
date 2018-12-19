@@ -1,3 +1,24 @@
+![NuGet Version](https://buildstats.info/nuget/SumoLogic.Logging.Serilog)
+![NuGet Version](https://buildstats.info/nuget/W4k.Serilog.Sinks.SumoLogic)
+
+# Deprecated!
+
+> This project has been merged into SumoLogic .NET appenders repository!
+
+`W4k.Serilog.Sinks.SumoLogic` has been merged to [SumoLogic/sumologic-net-appenders](SumoLogic/sumologic-net-appenders/pull/67).
+From now on, reference `SumoLogic.Logging.Serilog` package instead.
+
+## Migration to `SumoLogic.Logging.Serilog`
+
+In order to follow SumoLogic terminology, one change was made when naming appenders. To migrate, rename sinks accordingly:
+
+| W4k.Serilog.Sinks.SumoLogic sink name | SumoLogic.Logging.Serilog sink name |
+|---------------------------------------|-------------------------------------|
+| SumoLogicUnbufferedSink               | SumoLogicSink                       |
+| SumoLogicSink                         | BufferedSumoLogicSink               |
+
+(So as you can see, in SumoLogic package, buffered sink is named explicitly)
+
 # Introduction 
 
 Serilog sink for logging events into SumoLogic.
