@@ -5,7 +5,7 @@
 
 > This project has been merged into SumoLogic .NET appenders repository!
 
-`W4k.Serilog.Sinks.SumoLogic` has been merged to [SumoLogic/sumologic-net-appenders](SumoLogic/sumologic-net-appenders/pull/67).
+`W4k.Serilog.Sinks.SumoLogic` has been merged to [SumoLogic/sumologic-net-appenders](/SumoLogic/sumologic-net-appenders/pull/67).
 From now on, reference `SumoLogic.Logging.Serilog` package instead.
 
 ## Migration to `SumoLogic.Logging.Serilog`
@@ -18,6 +18,8 @@ In order to follow SumoLogic terminology, one change was made when naming append
 | SumoLogicSink                         | BufferedSumoLogicSink               |
 
 (So as you can see, in SumoLogic package, buffered sink is named explicitly)
+
+---
 
 # Introduction 
 
