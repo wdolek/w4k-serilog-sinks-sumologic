@@ -5,7 +5,7 @@
 
 > This project has been merged into SumoLogic .NET appenders repository!
 
-`W4k.Serilog.Sinks.SumoLogic` has been merged to [SumoLogic/sumologic-net-appenders](/SumoLogic/sumologic-net-appenders/pull/67).
+`W4k.Serilog.Sinks.SumoLogic` has been merged to [SumoLogic/sumologic-net-appenders](https://github.com/SumoLogic/sumologic-net-appenders/pull/67).
 From now on, reference `SumoLogic.Logging.Serilog` package instead.
 
 ## Migration to `SumoLogic.Logging.Serilog`
@@ -25,8 +25,8 @@ In order to follow SumoLogic terminology, one change was made when naming append
 
 Serilog sink for logging events into SumoLogic.
 
-Code is inspired by Bill Pratt's `Serilog.Sinks.SumoLogic` ([serilog-sinks-sumologic](https://github.com/billpratt/serilog-sinks-sumologic))
-and SumoLogic own appenders for log4net and NLog ([sumologic-net-appenders](https://github.com/SumoLogic/sumologic-net-appenders)).
+Code is inspired by Bill Pratt's `Serilog.Sinks.SumoLogic` ([billpratt/serilog-sinks-sumologic](https://github.com/billpratt/serilog-sinks-sumologic))
+and SumoLogic own appenders for log4net and NLog ([SumoLogic/sumologic-net-appenders](https://github.com/SumoLogic/sumologic-net-appenders)).
 
 ## Installation
 
