@@ -1,5 +1,4 @@
 ![NuGet Version](https://buildstats.info/nuget/SumoLogic.Logging.Serilog)
-![NuGet Version](https://buildstats.info/nuget/W4k.Serilog.Sinks.SumoLogic)
 
 # Deprecated!
 
